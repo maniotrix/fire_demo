@@ -67,7 +67,7 @@ class _Create_teamState extends State<Create_team>
   late List<String> wicketkeepers = [];
 
   Future get_players() async {
-    final players_list = await match.get_players_list(widget.match_id);
+    final players_list = match.get_players_list(widget.match_id);
     batsmen = players_list['batsmen'];
     bowlers = players_list['bowlers'];
     wicketkeepers = players_list['wicketkeepers'];

@@ -50,7 +50,7 @@ class _Match_contest_screenState extends State<Match_contest_screen>
   }
 
   Future get_points() async {
-    points = await match_points.get_fantasy_points(widget.match_id);
+    //points = await match_points.get_fantasy_points(widget.match_id);
   }
 
   List<Map<String, dynamic>> all_teams_points = [];

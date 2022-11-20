@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  List<int> match_id_list = [1278687, 1278688, 1278689, 1278690, 1278691];
+  List<int> match_id_list = [1278687];
 
   late List L = [];
 

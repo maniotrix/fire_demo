@@ -1,9 +1,20 @@
 import 'package:fire_demo/firebase_wrapper.dart';
 
-class Set_Data {
-  get_joined_teams_ref(String match_id) {}
+late List<bool> _color = List.filled(100, false, growable: true);
 
-  get_joined_teams_num(String match_id) {}
+class Set_Data {
+  Future<List> get_joined_teams_ref(String match_id) async {
+    return await FirebaseWrapper().getContests(match_id).then((snapshot) {
+      print("Contest size: " + snapshot.docs.length.toString());
+      return snapshot.docs.toList();
+    });
+  }
+
+  Future<String> get_joined_teams_num(String match_id) async {
+    return await FirebaseWrapper().getContests(match_id).then((snapshot) {
+      return snapshot.docs.map((e) {}).length.toString();
+    });
+  }
 
   get_joined_contest() {}
 
@@ -23,7 +34,7 @@ class Set_Data {
       List<String> batsmen,
       List<String> allrounders,
       List<String> bowlers) async {
-    await FirebaseWrapper().addTeam(team_num, match_id, players, c_name, vc_name,
-        wicketkeeper, batsmen, allrounders, bowlers);
+    await FirebaseWrapper().addTeam(team_num, match_id, players, c_name,
+        vc_name, wicketkeeper, batsmen, allrounders, bowlers);
   }
 }

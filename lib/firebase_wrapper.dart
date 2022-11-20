@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 class FirebaseWrapper {
   CollectionReference users = FirebaseFirestore.instance.collection('users');
+
   Future<void> addUser(name, phone) {
     print("Trying to add user");
     // Call the user's CollectionReference to add a new user
@@ -17,7 +18,8 @@ class FirebaseWrapper {
         .catchError((error) => print("Failed to add user: $error"));
   }
 
-  Future<void> addTeam(String team_num,
+  Future<void> addTeam(
+      String team_num,
       String match_id,
       List<String> players,
       String c_name,
@@ -36,16 +38,23 @@ class FirebaseWrapper {
         .collection("Teams");
     return teams
         .add({
-          'Captain' : c_name,
-          'Vice_Captain' : vc_name,
-          'Team' : players,
-          'Wicketkeepers' : wicketkeeper,
-          'Batsmen' : batsmen,
-          'Allrounders' : allrounders,
-          'Bowlers' : bowlers,
+          'Captain': c_name,
+          'Vice_Captain': vc_name,
+          'Team': players,
+          'Wicketkeepers': wicketkeeper,
+          'Batsmen': batsmen,
+          'Allrounders': allrounders,
+          'Bowlers': bowlers,
         })
         .then((value) => print("Team Added"))
         .catchError((error) => print("Failed to add team: $error"));
+  }
+
+  Future<QuerySnapshot> getContests(match) async {
+    print("Trying to get contests");
+    // Call the user's CollectionReference to add a new user
+    final collection = FirebaseFirestore.instance.collection('Contest');
+    return await collection.get();
   }
 }
 

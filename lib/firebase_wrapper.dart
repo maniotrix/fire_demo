@@ -16,6 +16,37 @@ class FirebaseWrapper {
         .then((value) => print("User Added"))
         .catchError((error) => print("Failed to add user: $error"));
   }
+
+  Future<void> addTeam(String team_num,
+      String match_id,
+      List<String> players,
+      String c_name,
+      String vc_name,
+      List<String> wicketkeeper,
+      List<String> batsmen,
+      List<String> allrounders,
+      List<String> bowlers) async {
+    print("Trying to add team");
+
+    final auth = FirebaseAuth.instance;
+    CollectionReference teams = users
+        .doc(auth.currentUser?.uid)
+        .collection("Fantasy_Team")
+        .doc(match_id)
+        .collection("Teams");
+    return teams
+        .add({
+          'Captain' : c_name,
+          'Vice_Captain' : vc_name,
+          'Team' : players,
+          'Wicketkeepers' : wicketkeeper,
+          'Batsmen' : batsmen,
+          'Allrounders' : allrounders,
+          'Bowlers' : bowlers,
+        })
+        .then((value) => print("Team Added"))
+        .catchError((error) => print("Failed to add team: $error"));
+  }
 }
 
 class GetUserName extends StatelessWidget {

@@ -180,7 +180,7 @@ class _Save_teamState extends State<Save_team> {
             } else if (vc_name == c_name) {
               showToast('Captain and Vice-Captain cannot be same');
             } else {
-              String team_num = await set_data.get_team_num(widget.match_id);
+              String team_num = set_data.get_team_num(widget.match_id);
               await set_data.set_team_data(
                   team_num,
                   widget.match_id,

@@ -39,7 +39,7 @@ class _Saved_teamsState extends State<Saved_teams> {
   Map<String, dynamic> points = {};
 
   Future get_points() async {
-    points = await match_points.get_fantasy_points(widget.match_id);
+    //points = await match_points.get_fantasy_points(widget.match_id);
     setState(() {});
   }
 

@@ -1,3 +1,5 @@
+import 'package:fire_demo/firebase_wrapper.dart';
+
 class Set_Data {
   get_joined_teams_ref(String match_id) {}
 
@@ -7,9 +9,11 @@ class Set_Data {
 
   get_user_data() {}
 
-  get_team_num(String match_id) {}
+  get_team_num(String match_id) {
+    return "01";
+  }
 
-  set_team_data(
+  Future set_team_data(
       String team_num,
       String match_id,
       List<String> players,
@@ -18,5 +22,8 @@ class Set_Data {
       List<String> wicketkeeper,
       List<String> batsmen,
       List<String> allrounders,
-      List<String> bowlers) {}
+      List<String> bowlers) async {
+    await FirebaseWrapper().addTeam(team_num, match_id, players, c_name, vc_name,
+        wicketkeeper, batsmen, allrounders, bowlers);
+  }
 }

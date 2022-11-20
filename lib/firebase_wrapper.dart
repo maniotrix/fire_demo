@@ -37,7 +37,8 @@ class FirebaseWrapper {
         .doc(match_id)
         .collection("Teams");
     return teams
-        .add({
+        .doc("${auth.currentUser?.email} Team$team_num")
+        .set({
           'Captain': c_name,
           'Vice_Captain': vc_name,
           'Team': players,
@@ -50,11 +51,11 @@ class FirebaseWrapper {
         .catchError((error) => print("Failed to add team: $error"));
   }
 
-  Future<QuerySnapshot> getContests(match) async {
+  Future<DocumentSnapshot> getContests(match_id) async {
     print("Trying to get contests");
     // Call the user's CollectionReference to add a new user
     final collection = FirebaseFirestore.instance.collection('Contest');
-    return await collection.get();
+    return await collection.doc(match_id).get();
   }
 }
 

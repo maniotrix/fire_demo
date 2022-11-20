@@ -109,7 +109,7 @@ class _Match_contest_screenState extends State<Match_contest_screen>
         final batsmen = documentSnapshot['Batsmen'];
         final allrounders = documentSnapshot['Allrounders'];
         final bowlers = documentSnapshot['Bowlers'];
-        final team_name = documentSnapshot['Team_Name'];
+        final team_name = documentSnapshot.id;
         double total_points = 0;
         Map<String, dynamic> team_data = {
           'Captain': captain,

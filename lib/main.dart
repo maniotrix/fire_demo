@@ -1,12 +1,7 @@
-import 'dart:ffi';
-import 'dart:io';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:fire_demo/auth/auth.dart';
-import 'package:fire_demo/firebase_wrapper.dart';
-import 'package:fire_demo/screen/login_signup/registration_screen.dart';
 import 'screen/login_signup/welcome_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';

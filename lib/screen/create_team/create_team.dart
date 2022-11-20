@@ -413,7 +413,7 @@ class _Create_teamState extends State<Create_team>
                 child: Center(
                     child: Text(
                   'Preview Team',
-                  style: GoogleFonts.mcLaren(fontSize: 20, color: Colors.white),
+                  style: GoogleFonts.mcLaren(fontSize: 20, color: Colors.blue),
                 )),
               ),
             ),
@@ -449,7 +449,7 @@ class _Create_teamState extends State<Create_team>
                 child: Center(
                     child: Text(
                   'Next',
-                  style: GoogleFonts.mcLaren(fontSize: 20, color: Colors.white),
+                  style: GoogleFonts.mcLaren(fontSize: 20, color: Colors.blue),
                 )),
               ),
             ),

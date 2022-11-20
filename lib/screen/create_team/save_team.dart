@@ -182,17 +182,17 @@ class _Save_teamState extends State<Save_team> {
             } else {
               set_data.get_team_num(widget.match_id).then((value) async {
                 await set_data.set_team_data(
-                  value,
-                  widget.match_id,
-                  players,
-                  c_name,
-                  vc_name,
-                  widget.wicketkeeper,
-                  widget.batsmen,
-                  widget.allrounders,
-                  widget.bowlers);
+                    value,
+                    widget.match_id,
+                    players,
+                    c_name,
+                    vc_name,
+                    widget.wicketkeeper,
+                    widget.batsmen,
+                    widget.allrounders,
+                    widget.bowlers);
               });
-              
+
               Navigator.pop(context);
               Navigator.pop(context);
             }
@@ -200,7 +200,7 @@ class _Save_teamState extends State<Save_team> {
           child: Center(
               child: Text(
             'Save Team',
-            style: GoogleFonts.mcLaren(fontSize: 20, color: Colors.white),
+            style: GoogleFonts.mcLaren(fontSize: 20, color: Colors.blue),
           )),
         ),
       ),
